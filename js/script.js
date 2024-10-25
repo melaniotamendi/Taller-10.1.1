@@ -36,7 +36,19 @@ function showList(array) {
   });
 }
 
+
 document.addEventListener("DOMContentLoaded", (e) => {
-  // Escribe tu solución aquí
-  // Sugerencia de cómo mostrar el array => showList(strangeArray);
-});
+    // Filtrar strings
+    function filterArray(array) {
+      return array.filter((element) => typeof element === "string");
+    }
+  
+    // Filtrar y ordenar alfabéticamente
+    const filteredAndSortedArray = filterArray(strangeArray).sort((a, b) => {
+      return a.localeCompare(b);
+    });
+  
+    // Mostrar el array filtrado y ordenado
+    showList(filteredAndSortedArray);
+  });
+  
